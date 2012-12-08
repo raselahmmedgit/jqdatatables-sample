@@ -5,7 +5,6 @@
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Optimize/f:_Delete.cshtml" caret="424" fromTop="8" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Optimize/f:_Create.cshtml" caret="421" fromTop="9" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Optimize/f:Index.cshtml" caret="260" fromTop="0" />
-    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_DataTablePartial.cshtml" caret="705" fromTop="6" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_Layout.cshtml" caret="1966" fromTop="18" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_SocialLinkPartial.cshtml" caret="419" fromTop="6" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:ViewModels/f:DomainViewModels.cs" caret="186" fromTop="10" />
@@ -30,13 +29,13 @@
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Product/f:_Delete.cshtml" caret="1010" fromTop="23" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Product/f:_Create.cshtml" caret="1346" fromTop="23" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Category/f:_ProductList.cshtml" caret="0" fromTop="0" />
+    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_DataTablePartial.cshtml" caret="712" fromTop="6" />
   </RecentFiles>
   <RecentEdits>
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Scripts/d:App/f:category-jq.js" caret="8987" fromTop="13" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Scripts/d:App/f:product-jq.js" caret="9084" fromTop="13" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Content/d:DataTables-1.9.4/d:media/d:css/f:jquery.dataTables.css" caret="2907" fromTop="15" />
-    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Content/d:App/f:dataTables.Custom.css" caret="0" fromTop="0" />
-    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_DataTablePartial.cshtml" caret="582" fromTop="4" />
+    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Content/d:App/f:jquery.dataTables.custom.css" caret="0" fromTop="0" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Content/d:App/f:app-style.css" caret="821" fromTop="23" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/f:Global.asax.cs" caret="922" fromTop="13" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Content/f:Site.css" caret="4935" fromTop="16" />
@@ -53,5 +52,6 @@
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Optimize/f:_Edit.cshtml" caret="411" fromTop="8" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Controllers/f:OptimizeController.cs" caret="227" fromTop="8" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Models/f:AppModels.cs" caret="950" fromTop="15" />
+    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_DataTablePartial.cshtml" caret="541" fromTop="4" />
   </RecentEdits>
 </RecentFiles>
