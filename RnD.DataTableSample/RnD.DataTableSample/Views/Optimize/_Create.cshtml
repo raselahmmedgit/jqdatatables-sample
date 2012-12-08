@@ -1,0 +1,23 @@
+﻿@model RnD.DataTableSample.Models.Category
+@using (Ajax.BeginForm("Create", "Category", null,
+        new AjaxOptions
+        {
+            UpdateTargetId = "updateTargetId",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST",
+            OnSuccess = "AjaxSuccess('addCategoryMess', 'addCategoryDialog', 'commonMessage', 'Category Added.')",
+        }, new { @id = "addForm" }))
+{
+    
+    <fieldset>
+        <legend>Category:</legend>
+        @Html.ValidationSummary(true)
+        <div id="updateTargetId" class="error invisible">
+        </div>
+        <div class="editor-field">
+            <strong>@Html.LabelFor(model => model.Name): </strong>
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+    </fieldset>
+}

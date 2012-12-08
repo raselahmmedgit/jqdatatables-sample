@@ -9,6 +9,12 @@ G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\RnD.DataTableSam
 G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\RnD.DataTableSample.pdb
 G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\EntityFramework.dll
 G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\EntityFramework.xml
-G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\obj\Debug\RnD.DataTableSample.csprojResolveAssemblyReference.cache
 G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\obj\Debug\RnD.DataTableSample.dll
 G:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\obj\Debug\RnD.DataTableSample.pdb
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\RnD.DataTableSample.dll
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\RnD.DataTableSample.pdb
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\EntityFramework.dll
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\bin\EntityFramework.xml
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\obj\Debug\RnD.DataTableSample.csprojResolveAssemblyReference.cache
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\obj\Debug\RnD.DataTableSample.dll
+E:\Work\RnD Project\RnD.DataTableSample\RnD.DataTableSample\obj\Debug\RnD.DataTableSample.pdb

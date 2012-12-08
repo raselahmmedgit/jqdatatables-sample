@@ -11,7 +11,7 @@ using RnD.DataTableSample.ViewModels;
 
 namespace RnD.DataTableSample.Controllers
 {
-    public class CategoryController : Controller
+    public class OptimizeController : Controller
     {
         private AppDbContext _db = new AppDbContext();
 
@@ -56,8 +56,7 @@ namespace RnD.DataTableSample.Controllers
             },
                             JsonRequestBehavior.AllowGet);
         }
-
-
+        
         //
         // GET: /Category/Details/By ID
 

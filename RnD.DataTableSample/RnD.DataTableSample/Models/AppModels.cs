@@ -29,6 +29,7 @@ namespace RnD.DataTableSample.Models
         [Required(ErrorMessage = "Price is required.")]
         public decimal Price { get; set; }
 
+        [Required(ErrorMessage = "Select one category.")]
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }

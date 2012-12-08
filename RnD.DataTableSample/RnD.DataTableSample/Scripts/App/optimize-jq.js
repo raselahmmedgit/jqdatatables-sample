@@ -64,25 +64,25 @@ function DeleteCategorySuccess() {
 //start Add, Edit, Delete - Success Common Funtion
 function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
 
-    var _updateTargetId = "#" + updateTargetId;
-    var _dailogID = "#" + dailogId;
-    var _commonMessageId = "#" + commonMessageId;
-    var _commonMessage = commonMessage;
+    var uTtId = "#" + updateTargetId;
+    var dId = "#" + dailogId;
+    var cMId = "#" + commonMessageId;
+    var cM = commonMessage;
 
-    if ($(_updateTargetId).html() == "True") {
+    if ($(uTtId).html() == "True") {
 
         //now we can close the dialog
-        $(_dailogID).dialog('close');
+        $(dId).dialog('close');
         //twitter type notification
-        $(_commonMessageId).html(_commonMessage);
-        $(_commonMessageId).delay(400).slideDown(400).delay(3000).slideUp(400);
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
 
         catObjData.fnDraw();
 
     }
     else {
         //show message in popup
-        $(_updateTargetId).show();
+        $(uTtId).show();
     }
 }
 //end Add, Edit, Delete - Success Common Funtion
@@ -90,17 +90,191 @@ function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
 
 //-----------------------------------------------------
 //start Create Dialog Dynamical
-function createDialog() {
+function createDialog(linkUrlVal, linkUrlTitle, formId, updateTargetId) {
 
-    $(document.body).append('<div id="appDialog"></div>');
+    var lUrlVal = linkUrlVal;
+    var lUrlTitle = linkUrlTitle;
+    var fId = formId;
+    var uTId = updateTargetId;
 
-    $("#appDialog").dialog({
+    alert(lUrlVal);
+    alert(lUrlTitle);
+    alert(fId);
+    alert(uTId);
+
+    if (lUrlTitle == "Add") {
+        alert(lUrlTitle);
+        addDialog(lUrlVal, fId, uTId);
+    }
+    else if (lUrlTitle == "Edit") {
+        alert(lUrlTitle);
+        editDialog(lUrlVal, fId, uTId);
+    }
+    else if (lUrlTitle == "Delete") {
+        alert(lUrlTitle);
+        deleteDialog(lUrlVal, fId, uTId);
+    }
+    else if (lUrlTitle = "Details") {
+        alert(lUrlTitle);
+        delailsDialog(lUrlVal);
+    }
+
+}
+
+//For Add
+function addDialog(linkUrlVal, formId, updateTargetId) {
+
+    $(document.body).append('<div id="appAddDialog"></div>');
+
+    var lUrlVal = linkUrlVal;
+    var fId = "#" + formId;
+    var uTId = "#" + updateTargetId;
+
+    $("#appAddDialog").dialog({
         width: 600,
         resizable: false,
-        modal: true
+        modal: true,
+        buttons: {
+            "Add": function () {
+                //make sure there is nothing on the message before we continue 
+                $(uTId).html('');
+                $(fId).submit();
+            },
+            "Cancel": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $.get(lUrlVal, function (data) {
+        $("#appAddDialog").html(data);
+        //validation
+        var $form = $(fId);
+        // Unbind existing validation
+        $form.unbind();
+        $form.data("validator", null);
+        // Check document for changes
+        $.validator.unobtrusive.parse(document);
+        // Re add validation with changes
+        $form.validate($form.data("unobtrusiveValidation").options);
+        //open dialog
+        $("#appAddDialog").dialog('open');
     });
 
 }
+
+//For Edit
+function editDialog(linkUrlVal, formId, updateTargetId) {
+
+    $(document.body).append('<div id="appEditDialog"></div>');
+
+    var lUrlVal = linkUrlVal;
+    var fId = "#" + formId;
+    var uTId = "#" + updateTargetId;
+
+    $("#appEditDialog").dialog({
+        width: 600,
+        resizable: false,
+        modal: true,
+        buttons: {
+            "Edit": function () {
+                //make sure there is nothing on the message before we continue 
+                $(uTId).html('');
+                $(fId).submit();
+                alert("Edit");
+            },
+            "Cancel": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $.get(lUrlVal, function (data) {
+        $("#appEditDialog").html(data);
+        //validation
+        var $form = $(fId);
+        // Unbind existing validation
+        $form.unbind();
+        $form.data("validator", null);
+        // Check document for changes
+        $.validator.unobtrusive.parse(document);
+        // Re add validation with changes
+        $form.validate($form.data("unobtrusiveValidation").options);
+        //open dialog
+        $("#appEditDialog").dialog('open');
+    });
+
+}
+
+//For Delete
+function deleteDialog(linkUrlVal, formId, updateTargetId) {
+
+    $(document.body).append('<div id="appDeleteDialog"></div>');
+
+    var lUrlVal = linkUrlVal;
+    var fId = "#" + formId;
+    var uTId = "#" + updateTargetId;
+
+    $("#appDeleteDialog").dialog({
+        width: 600,
+        resizable: false,
+        modal: true,
+        buttons: {
+            "Yes": function () {
+                //make sure there is nothing on the message before we continue 
+                $(uTId).html('');
+                $(fId).submit();
+                alert("Delete");
+            },
+            "Cancel": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $.get(lUrlVal, function (data) {
+        $("#appDeleteDialog").html(data);
+        //validation
+        var $form = $(fId);
+        // Unbind existing validation
+        $form.unbind();
+        $form.data("validator", null);
+        // Check document for changes
+        $.validator.unobtrusive.parse(document);
+        // Re add validation with changes
+        $form.validate($form.data("unobtrusiveValidation").options);
+        //open dialog
+        $("#appDeleteDialog").dialog('open');
+    });
+
+}
+
+//For Details
+function delailsDialog(linkUrlVal) {
+
+    $(document.body).append('<div id="appDetailsDialog"></div>');
+
+    var lUrlVal = linkUrlVal;
+
+    $("#appDetailsDialog").dialog({
+        autoOpen: false,
+        width: 500,
+        resizable: false,
+        modal: true,
+        buttons: {
+            "Cancel": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $.get(lUrlVal, function (data) {
+        $("#appDetailsDialog").html(data);
+        $("#appDetailsDialog").dialog('open');
+    });
+
+}
+
 //end Create Dialog Dynamical
 //-----------------------------------------------------
 
@@ -152,11 +326,11 @@ $(function () {
             "fnRender": function (oObj) {
                 return '<img class="catPro img-expand-collapse" src="/Content/Images/App/details_open.png" title="Product List" alt="expand/collapse" rel="' +
                                 oObj.aData[0] + '"/>' +
-                                '<a class="lnkDetailsCategory" href=\"/Category/Details/' +
+                                '<a class="lnkDialog" title="Details" href=\"/Category/Details/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/detail.png" title="Details" class="tb-space" alt="Detail"></a>' +
-                                '<a class="lnkEditCategory" href=\"/Category/Edit/' +
+                                '<a class="lnkDialog" title="Edit" form="editForm" href=\"/Category/Edit/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/edit.png" title="Edit" class="tb-space" alt="Edit"></a>' +
-                                '<a class="lnkDeleteCategory" href=\"/Category/Delete/' +
+                                '<a class="lnkDialog" title="Delete" form="deleteForm" href=\"/Category/Delete/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/delete.png" title="Delete" class="tb-space" alt="Delete"></a>';
 
             }
@@ -172,30 +346,20 @@ $(function () {
     //start Add, Edit, Delete - Dialog Open Dynamical, Click Event
 
     //add Category
-    $('.lnkDialog').click(function () {
+    $('#categoryDataTable tbody td a.lnkDialog').live('click', function () {
 
-        // Create Dialog
-        createDialog();
+        alert("Hello");
 
         //change the title of the dialog
         linkObj = $(this);
-        var dialogDiv = $('#addCategoryDialog');
-        var viewUrl = linkObj.attr('href');
+        var linkUrlVal = linkObj.attr('href');
+        var linkUrlTitle = linkObj.attr('title');
+        var linkUrlFormId = linkObj.attr('form');
+        var updateTargetId = 'updateTargetId';
 
-        $.get(viewUrl, function (data) {
-            dialogDiv.html(data);
-            //validation
-            var $form = $("#addCategoryForm");
-            // Unbind existing validation
-            $form.unbind();
-            $form.data("validator", null);
-            // Check document for changes
-            $.validator.unobtrusive.parse(document);
-            // Re add validation with changes
-            $form.validate($form.data("unobtrusiveValidation").options);
-            //open dialog
-            dialogDiv.dialog('open');
-        });
+        // Create Dialog
+        createDialog(linkUrlVal, linkUrlTitle, linkUrlFormId, updateTargetId);
+
         return false;
 
     });
@@ -229,9 +393,9 @@ $(function () {
         //change the title of the dialog
         linkObj = $(this);
         var dialogDiv = $('#addCategoryDialog');
-        var viewUrl = linkObj.attr('href');
+        var linkUrlVal = linkObj.attr('href');
 
-        $.get(viewUrl, function (data) {
+        $.get(linkUrlVal, function (data) {
             dialogDiv.html(data);
             //validation
             var $form = $("#addCategoryForm");
@@ -277,8 +441,8 @@ $(function () {
         //change the title of the dialog
         linkObj = $(this);
         var dialogDiv = $('#editCategoryDialog');
-        var viewUrl = linkObj.attr('href');
-        $.get(viewUrl, function (data) {
+        var linkUrlVal = linkObj.attr('href');
+        $.get(linkUrlVal, function (data) {
             dialogDiv.html(data);
             //validation
             var $form = $("#editCategoryForm");
@@ -319,8 +483,8 @@ $(function () {
         //change the title of the dialog
         linkObj = $(this);
         var dialogDiv = $('#deleteCategoryDailog');
-        var viewUrl = linkObj.attr('href');
-        $.get(viewUrl, function (data) {
+        var linkUrlVal = linkObj.attr('href');
+        $.get(linkUrlVal, function (data) {
             dialogDiv.html(data);
             //validation
             var $form = $("#deleteCategoryForm");
@@ -355,8 +519,8 @@ $(function () {
 
         linkObj = $(this);
         var dialogDiv = $('#detailsCategoryDialog');
-        var viewUrl = linkObj.attr('href');
-        $.get(viewUrl, function (data) {
+        var linkUrlVal = linkObj.attr('href');
+        $.get(linkUrlVal, function (data) {
             dialogDiv.html(data);
             dialogDiv.dialog('open');
         });
