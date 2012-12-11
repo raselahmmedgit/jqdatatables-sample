@@ -1,5 +1,5 @@
-2012/12/08-12:37:33.408 1608 Recovering log #69
-2012/12/08-12:37:33.422 1608 Level-0 table #72: started
-2012/12/08-12:37:33.460 1608 Level-0 table #72: 812 bytes OK
-2012/12/08-12:37:33.530 1608 Delete type=0 #69
-2012/12/08-12:37:33.531 1608 Delete type=3 #67
+2012/12/08-15:38:01.208 e2c Recovering log #76
+2012/12/08-15:38:01.208 e2c Level-0 table #78: started
+2012/12/08-15:38:01.312 e2c Level-0 table #78: 1141 bytes OK
+2012/12/08-15:38:01.403 e2c Delete type=0 #76
+2012/12/08-15:38:01.404 e2c Delete type=3 #74
