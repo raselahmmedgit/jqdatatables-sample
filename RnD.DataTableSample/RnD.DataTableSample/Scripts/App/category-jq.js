@@ -88,8 +88,6 @@ function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
 //end Add, Edit, Delete - Success Common Funtion
 //-----------------------------------------------------
 
-var linkObj;
-
 var catObjData;
 
 $(function () {

@@ -1,11 +1,11 @@
 ﻿@model RnD.DataTableSample.Models.Category
-@using (Ajax.BeginForm("Delete", "Category", null,
+@using (Ajax.BeginForm("Delete", "Optimize", null,
         new AjaxOptions
         {
             UpdateTargetId = "updateTargetId",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST",
-            OnSuccess = "AjaxSuccess('deleteCategoryMess', 'deleteCategoryDailog', 'commonMessage', 'Category Deleted.')",
+            OnSuccess = "AjaxSuccess",
         }, new { @id = "deleteForm" }))
 {  
     

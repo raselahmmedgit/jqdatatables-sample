@@ -1,11 +1,11 @@
 ﻿@model RnD.DataTableSample.Models.Category
-@using (Ajax.BeginForm("Create", "Category", null,
+@using (Ajax.BeginForm("Create", "Optimize", null,
         new AjaxOptions
         {
             UpdateTargetId = "updateTargetId",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST",
-            OnSuccess = "AjaxSuccess('addCategoryMess', 'addCategoryDialog', 'commonMessage', 'Category Added.')",
+            OnSuccess = "AjaxSuccessWithDailog('appAddDialog')",
         }, new { @id = "addForm" }))
 {
     

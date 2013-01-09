@@ -5,7 +5,7 @@
             UpdateTargetId = "deleteCategoryMess",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST",
-            OnSuccess = "AjaxSuccess('deleteCategoryMess', 'deleteCategoryDailog', 'commonMessage', 'Category Deleted.')",
+            OnSuccess = "AjaxSuccessWithDailog('appDeleteDialog')",
         }, new { @id = "deleteCategoryForm" }))
 {  
     

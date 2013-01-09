@@ -88,8 +88,6 @@ function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
 //end Add, Edit, Delete - Success Common Funtion
 //-----------------------------------------------------
 
-var linkObj;
-
 var proObjData;
 
 $(function () {
@@ -179,7 +177,7 @@ $(function () {
     $('.lnkAddProduct').click(function () {
 
         //change the title of the dialgo
-        linkObj = $(this);
+        var linkObj = $(this);
         var dialogDiv = $('#addProductDialog');
         var viewUrl = linkObj.attr('href');
 
@@ -227,7 +225,7 @@ $(function () {
     $('#productDataTable tbody td a.lnkEditProduct').live('click', function () {
 
         //change the title of the dialgo
-        linkObj = $(this);
+        var linkObj = $(this);
         var dialogDiv = $('#editProductDialog');
         var viewUrl = linkObj.attr('href');
         $.get(viewUrl, function (data) {
@@ -269,7 +267,7 @@ $(function () {
     $('#productDataTable tbody td a.lnkDeleteProduct').live('click', function () {
 
         //change the title of the dialgo
-        linkObj = $(this);
+        var linkObj = $(this);
         var dialogDiv = $('#deleteProductDialog');
         var viewUrl = linkObj.attr('href');
         $.get(viewUrl, function (data) {
@@ -305,7 +303,7 @@ $(function () {
 
     $('#productDataTable tbody td a.lnkDetailsProduct').live('click', function () {
 
-        linkObj = $(this);
+        var linkObj = $(this);
         var dialogDiv = $('#detailsProductDialog');
         var viewUrl = linkObj.attr('href');
         $.get(viewUrl, function (data) {

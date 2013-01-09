@@ -1,68 +1,187 @@
 ﻿//-----------------------------------------------------
-//start Add, Edit, Delete - Success Funtion
-// Add Category Success Function
-function AddCategorySuccess() {
-    alert("AddCategorySuccess");
-    if ($("#addCategoryMess").html() == "True") {
-
-        //now we can close the dialog
-        $('#addCategoryDialog').dialog('close');
-        //twitter type notification
-        $('#commonMessage').html("Category Added.");
-        $('#commonMessage').delay(400).slideDown(400).delay(3000).slideUp(400);
-
-        catObjData.fnDraw();
-
-    }
-    else {
-        //show message in popup
-        $("#addCategoryMess").show();
-    }
-}
-
-// Edit Category Success Function
-function EditCategorySuccess() {
-    if ($("#editCategoryMess").html() == "True") {
-
-        //now we can close the dialog
-        $('#editCategoryDialog').dialog('close');
-        //twitter type notification
-        $('#commonMessage').html("Category Updated.");
-        $('#commonMessage').delay(400).slideDown(400).delay(3000).slideUp(400);
-
-        catObjData.fnDraw();
-
-    }
-    else {
-        //show message in popup
-        $("#editCategoryMess").show();
-    }
-}
-
-// Delete Category Success Function
-function DeleteCategorySuccess() {
-    if ($("#deleteCategoryMess").html() == "True") {
-
-        //now we can close the dialog
-        $('#deleteCategoryDailog').dialog('close');
-        //twitter type notification
-        $('#commonMessage').html("Task deleted");
-        $('#commonMessage').delay(400).slideDown(400).delay(3000).slideUp(400);
-
-        catObjData.fnDraw();
-
-    }
-    else {
-        //show message in popup
-        $("#deleteCategoryMess").show();
-    }
-}
-//end Add, Edit, Delete - Success Funtion
-//-----------------------------------------------------
-
-//-----------------------------------------------------
 //start Add, Edit, Delete - Success Common Funtion
-function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
+
+// Add Success
+function AjaxAddSuccess() {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#appAddDailog";
+    var cMId = "#commonMessage";
+    var cM = "Successfull!";
+
+    alert(dId);
+
+    if ($(uTtId).html() == "True") {
+        //now we can close the dialog
+        $(dId).dialog('close');
+        //$('#appDailog').dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+
+}
+
+// Edit Success
+function AjaxEditSuccess() {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#appEditDailog";
+    var cMId = "#commonMessage";
+    var cM = "Successfull!";
+
+    if ($(uTtId).html() == "True") {
+        //now we can close the dialog
+        $(dId).dialog('close');
+        //$('#appEditDailog').dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+
+}
+
+// Delete Success
+function AjaxDeleteSuccess() {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#appDeleteDialog";
+    var cMId = "#commonMessage";
+    var cM = "Successfull!";
+
+    if ($(uTtId).html() == "True") {
+        //now we can close the dialog
+        $(dId).dialog('close');
+        //$('#appDeleteDialog').dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+
+}
+
+// Details Success
+function AjaxDetailsSuccess() {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#appDetailsDialog";
+    var cMId = "#commonMessage";
+    var cM = "Successfull!";
+
+    if ($(uTtId).html() == "True") {
+        //now we can close the dialog
+        $(dId).dialog('close');
+        //$('#appDetailsDialog').dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+
+}
+
+function AjaxSuccess() {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#appDailog";
+    var cMId = "#commonMessage";
+    var cM = "Successfull!";
+
+    if ($(uTtId).html() == "True") {
+        //now we can close the dialog
+        //$(dId).dialog('close');
+        $('#appDailog').dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+
+}
+
+function AjaxSuccessWithDailog(dailogId) {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#" + dailogId;
+    var cMId = "#commonMessage";
+    var cM = "Successfull!";
+
+    if ($(uTtId).html() == "True") {
+        //now we can close the dialog
+        $(dId).dialog('close');
+        //$('#appDailog').dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+
+}
+
+function AjaxSuccessWithMess(commonMessage) {
+
+    var uTtId = "#updateTargetId";
+    var dId = "#appDailog";
+    var cMId = "#commonMessage";
+    var cM = commonMessage;
+
+    if ($(uTtId).html() == "True") {
+
+        //now we can close the dialog
+        $(dId).dialog('close');
+        //twitter type notification
+        $(cMId).html(cM);
+        $(cMId).delay(400).slideDown(400).delay(3000).slideUp(400);
+
+        catObjData.fnDraw();
+
+    }
+    else {
+        //show message in popup
+        $(uTtId).show();
+    }
+}
+
+function AjaxSuccessWithParam(updateTargetId, dailogId, commonMessageId, commonMessage) {
 
     var uTtId = "#" + updateTargetId;
     var dId = "#" + dailogId;
@@ -85,38 +204,66 @@ function AjaxSuccess(updateTargetId, dailogId, commonMessageId, commonMessage) {
         $(uTtId).show();
     }
 }
+
 //end Add, Edit, Delete - Success Common Funtion
 //-----------------------------------------------------
 
 //-----------------------------------------------------
-//start Create Dialog Dynamical
-function createDialog(linkUrlVal, linkUrlTitle, formId, updateTargetId) {
+//start Create Dialog Dynamical by linkObj param
+function createDialogWithLnkObj(linkObj) {
+
+    //change the title of the dialog
+    //var linkObj = $(this);
+    var linkUrlVal = linkObj.attr('href');
+    var linkUrlTitle = linkObj.attr('title');
+    var linkUrlFormId = linkObj.attr('form');
+    var updateTargetId = 'updateTargetId';
+
+    var lUrlVal = linkUrlVal;
+    var lUrlTitle = linkUrlTitle;
+    var fId = linkUrlFormId;
+    var uTId = updateTargetId;
+
+    if (lUrlTitle == "Add") {
+        addDialog(lUrlVal, fId, uTId);
+    }
+    else if (lUrlTitle == "Edit") {
+        editDialog(lUrlVal, fId, uTId);
+    }
+    else if (lUrlTitle == "Delete") {
+        deleteDialog(lUrlVal, fId, uTId);
+    }
+    else if (lUrlTitle = "Details") {
+        detailsDialog(lUrlVal);
+    }
+    else {
+        return;
+    }
+}
+
+//-----------------------------------------------------
+//start Create Dialog Dynamical by linkUrlVal, linkUrlTitle, formId, updateTargetId param
+function createDialogWithParam(linkUrlVal, linkUrlTitle, formId, updateTargetId) {
 
     var lUrlVal = linkUrlVal;
     var lUrlTitle = linkUrlTitle;
     var fId = formId;
     var uTId = updateTargetId;
 
-    alert(lUrlVal);
-    alert(lUrlTitle);
-    alert(fId);
-    alert(uTId);
-
     if (lUrlTitle == "Add") {
-        alert(lUrlTitle);
         addDialog(lUrlVal, fId, uTId);
     }
     else if (lUrlTitle == "Edit") {
-        alert(lUrlTitle);
         editDialog(lUrlVal, fId, uTId);
     }
     else if (lUrlTitle == "Delete") {
-        alert(lUrlTitle);
         deleteDialog(lUrlVal, fId, uTId);
     }
     else if (lUrlTitle = "Details") {
-        alert(lUrlTitle);
-        delailsDialog(lUrlVal);
+        detailsDialog(lUrlVal);
+    }
+    else {
+        return;
     }
 
 }
@@ -124,7 +271,11 @@ function createDialog(linkUrlVal, linkUrlTitle, formId, updateTargetId) {
 //For Add
 function addDialog(linkUrlVal, formId, updateTargetId) {
 
-    $(document.body).append('<div id="appAddDialog"></div>');
+    if ($('#appAddDialog').length == 0) {
+        $(document.body).append('<div id="appAddDialog"></div>');
+    } else {
+        $('#appAddDialog').html('');
+    }
 
     var lUrlVal = linkUrlVal;
     var fId = "#" + formId;
@@ -139,6 +290,7 @@ function addDialog(linkUrlVal, formId, updateTargetId) {
                 //make sure there is nothing on the message before we continue 
                 $(uTId).html('');
                 $(fId).submit();
+                //alert("Add");
             },
             "Cancel": function () {
                 $(this).dialog("close");
@@ -161,12 +313,18 @@ function addDialog(linkUrlVal, formId, updateTargetId) {
         $("#appAddDialog").dialog('open');
     });
 
+    return;
+
 }
 
 //For Edit
 function editDialog(linkUrlVal, formId, updateTargetId) {
 
-    $(document.body).append('<div id="appEditDialog"></div>');
+    if ($('#appEditDialog').length == 0) {
+        $(document.body).append('<div id="appEditDialog"></div>');
+    } else {
+        $('#appEditDialog').html('');
+    }
 
     var lUrlVal = linkUrlVal;
     var fId = "#" + formId;
@@ -181,7 +339,7 @@ function editDialog(linkUrlVal, formId, updateTargetId) {
                 //make sure there is nothing on the message before we continue 
                 $(uTId).html('');
                 $(fId).submit();
-                alert("Edit");
+                //alert("Edit");
             },
             "Cancel": function () {
                 $(this).dialog("close");
@@ -204,12 +362,17 @@ function editDialog(linkUrlVal, formId, updateTargetId) {
         $("#appEditDialog").dialog('open');
     });
 
+    return;
 }
 
 //For Delete
 function deleteDialog(linkUrlVal, formId, updateTargetId) {
 
-    $(document.body).append('<div id="appDeleteDialog"></div>');
+    if ($('#appDeleteDialog').length == 0) {
+        $(document.body).append('<div id="appDeleteDialog"></div>');
+    } else {
+        $('#appDeleteDialog').html('');
+    }
 
     var lUrlVal = linkUrlVal;
     var fId = "#" + formId;
@@ -224,7 +387,7 @@ function deleteDialog(linkUrlVal, formId, updateTargetId) {
                 //make sure there is nothing on the message before we continue 
                 $(uTId).html('');
                 $(fId).submit();
-                alert("Delete");
+                //alert("Delete");
             },
             "Cancel": function () {
                 $(this).dialog("close");
@@ -247,12 +410,17 @@ function deleteDialog(linkUrlVal, formId, updateTargetId) {
         $("#appDeleteDialog").dialog('open');
     });
 
+    return;
 }
 
 //For Details
-function delailsDialog(linkUrlVal) {
+function detailsDialog(linkUrlVal) {
 
-    $(document.body).append('<div id="appDetailsDialog"></div>');
+    if ($('#appDetailsDialog').length == 0) {
+        $(document.body).append('<div id="appDetailsDialog"></div>');
+    } else {
+        $('#appDetailsDialog').html('');
+    }
 
     var lUrlVal = linkUrlVal;
 
@@ -273,12 +441,11 @@ function delailsDialog(linkUrlVal) {
         $("#appDetailsDialog").dialog('open');
     });
 
+    return;
 }
 
 //end Create Dialog Dynamical
 //-----------------------------------------------------
-
-var linkObj;
 
 var catObjData;
 
@@ -297,7 +464,7 @@ $(function () {
             else {
                 this.src = "/Content/Images/App/details_close.png";
                 var catid = $(this).attr("rel");
-                $.get("/Category/GetProducts?catId=" + catid, function (products) {
+                $.get("/Optimize/GetProducts?catId=" + catid, function (products) {
                     catObjData.fnOpen(nTr, products, 'details');
                 });
             }
@@ -319,18 +486,18 @@ $(function () {
         },
         "bProcessing": true,
         "bServerSide": true,
-        "sAjaxSource": "/Category/GetCategories",
+        "sAjaxSource": "/Optimize/GetCategories",
         "aoColumns": [{ "sName": "ID",
             "bSearchable": false,
             "bSortable": false,
             "fnRender": function (oObj) {
                 return '<img class="catPro img-expand-collapse" src="/Content/Images/App/details_open.png" title="Product List" alt="expand/collapse" rel="' +
                                 oObj.aData[0] + '"/>' +
-                                '<a class="lnkDialog" title="Details" href=\"/Category/Details/' +
+                                '<a class="lnkDialog" title="Details" href=\"/Optimize/Details/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/detail.png" title="Details" class="tb-space" alt="Detail"></a>' +
-                                '<a class="lnkDialog" title="Edit" form="editForm" href=\"/Category/Edit/' +
+                                '<a class="lnkDialog" title="Edit" form="editForm" href=\"/Optimize/Edit/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/edit.png" title="Edit" class="tb-space" alt="Edit"></a>' +
-                                '<a class="lnkDialog" title="Delete" form="deleteForm" href=\"/Category/Delete/' +
+                                '<a class="lnkDialog" title="Delete" form="deleteForm" href=\"/Optimize/Delete/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/delete.png" title="Delete" class="tb-space" alt="Delete"></a>';
 
             }
@@ -345,190 +512,25 @@ $(function () {
     //-------------------------------------------------------
     //start Add, Edit, Delete - Dialog Open Dynamical, Click Event
 
-    //add Category
-    $('#categoryDataTable tbody td a.lnkDialog').live('click', function () {
-
-        alert("Hello");
+    //add, edit, delete Category
+    $('.lnkDialog').live('click', function () {
 
         //change the title of the dialog
-        linkObj = $(this);
+        var linkObj = $(this);
         var linkUrlVal = linkObj.attr('href');
         var linkUrlTitle = linkObj.attr('title');
         var linkUrlFormId = linkObj.attr('form');
         var updateTargetId = 'updateTargetId';
 
         // Create Dialog
-        createDialog(linkUrlVal, linkUrlTitle, linkUrlFormId, updateTargetId);
+        //createDialogWithParam(linkUrlVal, linkUrlTitle, linkUrlFormId, updateTargetId);
+        createDialogWithLnkObj(linkObj);
 
         return false;
 
     });
 
     //end Add, Edit, Delete - Dialog Open Dynamical, Click Event
-    //-------------------------------------------------------
-
-    //-------------------------------------------------------
-    //start Add, Edit, Delete - Dialog, Click Event
-
-    $("#addCategoryDialog").dialog({
-        autoOpen: false,
-        width: 600,
-        resizable: false,
-        modal: true,
-        buttons: {
-            "Add": function () {
-                //make sure there is nothing on the message before we continue 
-                $("#addCategoryMess").html('');
-                $("#addCategoryForm").submit();
-            },
-            "Cancel": function () {
-                $(this).dialog("close");
-            }
-        }
-    });
-
-    //add Category
-    $('.lnkAddCategory').click(function () {
-
-        //change the title of the dialog
-        linkObj = $(this);
-        var dialogDiv = $('#addCategoryDialog');
-        var linkUrlVal = linkObj.attr('href');
-
-        $.get(linkUrlVal, function (data) {
-            dialogDiv.html(data);
-            //validation
-            var $form = $("#addCategoryForm");
-            // Unbind existing validation
-            $form.unbind();
-            $form.data("validator", null);
-            // Check document for changes
-            $.validator.unobtrusive.parse(document);
-            // Re add validation with changes
-            $form.validate($form.data("unobtrusiveValidation").options);
-            //open dialog
-            dialogDiv.dialog('open');
-        });
-        return false;
-
-    });
-
-    //edit Category
-    $("#editCategoryDialog").dialog({
-        autoOpen: false,
-        width: 600,
-        resizable: false,
-        closeOnEscape: false,
-        modal: true,
-        close: function (event, ui) {
-            $(".popover").hide();
-        },
-        buttons: {
-            "Edit": function () {
-                //make sure there is nothing on the message before we continue   
-                $("#editCategoryMess").html('');
-                $("#editCategoryForm").submit();
-            },
-            "Cancel": function () {
-                $(this).dialog("close");
-            }
-        }
-
-    });
-
-    $('#categoryDataTable tbody td a.lnkEditCategory').live('click', function () {
-
-        //change the title of the dialog
-        linkObj = $(this);
-        var dialogDiv = $('#editCategoryDialog');
-        var linkUrlVal = linkObj.attr('href');
-        $.get(linkUrlVal, function (data) {
-            dialogDiv.html(data);
-            //validation
-            var $form = $("#editCategoryForm");
-            // Unbind existing validation
-            $form.unbind();
-            $form.data("validator", null);
-            // Check document for changes
-            $.validator.unobtrusive.parse(document);
-            // Re add validation with changes
-            $form.validate($form.data("unobtrusiveValidation").options);
-            //open dialog
-            dialogDiv.dialog('open');
-        });
-        return false;
-
-    });
-
-    //delete Category
-    $("#deleteCategoryDailog").dialog({
-        autoOpen: false,
-        width: 600,
-        resizable: false,
-        modal: true,
-        buttons: {
-            "Yes": function () {
-                //make sure there is nothing on the message before we continue                         
-                $("#deleteCategoryMess").html('');
-                $("#deleteCategoryForm").submit();
-            },
-            "Cancel": function () {
-                $(this).dialog("close");
-            }
-        }
-    });
-
-    $('#categoryDataTable tbody td a.lnkDeleteCategory').live('click', function () {
-
-        //change the title of the dialog
-        linkObj = $(this);
-        var dialogDiv = $('#deleteCategoryDailog');
-        var linkUrlVal = linkObj.attr('href');
-        $.get(linkUrlVal, function (data) {
-            dialogDiv.html(data);
-            //validation
-            var $form = $("#deleteCategoryForm");
-            // Unbind existing validation
-            $form.unbind();
-            $form.data("validator", null);
-            // Check document for changes
-            $.validator.unobtrusive.parse(document);
-            // Re add validation with changes
-            $form.validate($form.data("unobtrusiveValidation").options);
-            //open dialog
-            dialogDiv.dialog('open');
-        });
-        return false;
-
-    });
-
-    //For details Category
-    $("#detailsCategoryDialog").dialog({
-        autoOpen: false,
-        width: 500,
-        resizable: false,
-        modal: true,
-        buttons: {
-            "Cancel": function () {
-                $(this).dialog("close");
-            }
-        }
-    });
-
-    $('#categoryDataTable tbody td a.lnkDetailsCategory').live('click', function () {
-
-        linkObj = $(this);
-        var dialogDiv = $('#detailsCategoryDialog');
-        var linkUrlVal = linkObj.attr('href');
-        $.get(linkUrlVal, function (data) {
-            dialogDiv.html(data);
-            dialogDiv.dialog('open');
-        });
-        return false;
-
-    });
-
-    //end Add, Edit, Delete - Dialog, Click Event
     //-------------------------------------------------------
 
 });

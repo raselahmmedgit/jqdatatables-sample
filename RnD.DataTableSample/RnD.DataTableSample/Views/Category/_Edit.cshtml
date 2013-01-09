@@ -5,7 +5,7 @@
             UpdateTargetId = "editCategoryMess",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST",
-            OnSuccess = "AjaxSuccess('editCategoryMess', 'editCategoryDialog', 'commonMessage', 'Category Edited.')",
+            OnSuccess = "AjaxSuccessWithDailog('appEditDialog')",
         }, new { @id = "editCategoryForm" }))
 {
     <fieldset>

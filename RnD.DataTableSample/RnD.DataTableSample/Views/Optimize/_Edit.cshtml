@@ -1,11 +1,11 @@
 ﻿@model RnD.DataTableSample.Models.Category
-@using (Ajax.BeginForm("Edit", "Category", null,
+@using (Ajax.BeginForm("Edit", "Optimize", null,
         new AjaxOptions
         {
             UpdateTargetId = "updateTargetId",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST",
-            OnSuccess = "AjaxSuccess('editCategoryMess', 'editCategoryDialog', 'commonMessage', 'Category Edited.')",
+            OnSuccess = "AjaxSuccess",
         }, new { @id = "editForm" }))
 {
     <fieldset>
