@@ -216,25 +216,27 @@ function createDialogWithLnkObj(linkObj) {
     //var linkObj = $(this);
     var linkUrlVal = linkObj.attr('href');
     var linkUrlTitle = linkObj.attr('title');
+    var linkUrlRel = linkObj.attr('rel');
     var linkUrlFormId = linkObj.attr('form');
     var updateTargetId = 'updateTargetId';
 
     var lUrlVal = linkUrlVal;
     var lUrlTitle = linkUrlTitle;
+    var lUrlRel = linkUrlRel;
     var fId = linkUrlFormId;
     var uTId = updateTargetId;
 
     if (lUrlTitle == "Add") {
-        addDialog(lUrlVal, fId, uTId);
+        addDialog(lUrlRel, lUrlVal, fId, uTId);
     }
     else if (lUrlTitle == "Edit") {
-        editDialog(lUrlVal, fId, uTId);
+        editDialog(lUrlRel, lUrlVal, fId, uTId);
     }
     else if (lUrlTitle == "Delete") {
-        deleteDialog(lUrlVal, fId, uTId);
+        deleteDialog(lUrlRel, lUrlVal, fId, uTId);
     }
     else if (lUrlTitle = "Details") {
-        detailsDialog(lUrlVal);
+        detailsDialog(lUrlRel, lUrlVal);
     }
     else {
         return;
@@ -269,10 +271,10 @@ function createDialogWithParam(linkUrlVal, linkUrlTitle, formId, updateTargetId)
 }
 
 //For Add
-function addDialog(linkUrlVal, formId, updateTargetId) {
+function addDialog(linkUrlRel, linkUrlVal, formId, updateTargetId) {
 
     if ($('#appAddDialog').length == 0) {
-        $(document.body).append('<div id="appAddDialog"></div>');
+        $(document.body).append('<div id="appAddDialog" title="Add"></div>');
     } else {
         $('#appAddDialog').html('');
     }
@@ -318,10 +320,10 @@ function addDialog(linkUrlVal, formId, updateTargetId) {
 }
 
 //For Edit
-function editDialog(linkUrlVal, formId, updateTargetId) {
+function editDialog(linkUrlRel, linkUrlVal, formId, updateTargetId) {
 
     if ($('#appEditDialog').length == 0) {
-        $(document.body).append('<div id="appEditDialog"></div>');
+        $(document.body).append('<div id="appEditDialog" title="Edit"></div>');
     } else {
         $('#appEditDialog').html('');
     }
@@ -366,10 +368,10 @@ function editDialog(linkUrlVal, formId, updateTargetId) {
 }
 
 //For Delete
-function deleteDialog(linkUrlVal, formId, updateTargetId) {
+function deleteDialog(linkUrlRel, linkUrlVal, formId, updateTargetId) {
 
     if ($('#appDeleteDialog').length == 0) {
-        $(document.body).append('<div id="appDeleteDialog"></div>');
+        $(document.body).append('<div id="appDeleteDialog" title="Delete"></div>');
     } else {
         $('#appDeleteDialog').html('');
     }
@@ -414,10 +416,10 @@ function deleteDialog(linkUrlVal, formId, updateTargetId) {
 }
 
 //For Details
-function detailsDialog(linkUrlVal) {
+function detailsDialog(linkUrlRel, linkUrlVal) {
 
     if ($('#appDetailsDialog').length == 0) {
-        $(document.body).append('<div id="appDetailsDialog"></div>');
+        $(document.body).append('<div id="appDetailsDialog" title="Details"></div>');
     } else {
         $('#appDetailsDialog').html('');
     }
@@ -493,11 +495,11 @@ $(function () {
             "fnRender": function (oObj) {
                 return '<img class="catPro img-expand-collapse" src="/Content/Images/App/details_open.png" title="Product List" alt="expand/collapse" rel="' +
                                 oObj.aData[0] + '"/>' +
-                                '<a class="lnkDialog" title="Details" href=\"/Optimize/Details/' +
+                                '<a class="lnkDialog" title="Details" rel="Category" href=\"/Optimize/Details/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/detail.png" title="Details" class="tb-space" alt="Detail"></a>' +
-                                '<a class="lnkDialog" title="Edit" form="editForm" href=\"/Optimize/Edit/' +
+                                '<a class="lnkDialog" title="Edit" rel="Category" form="editForm" href=\"/Optimize/Edit/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/edit.png" title="Edit" class="tb-space" alt="Edit"></a>' +
-                                '<a class="lnkDialog" title="Delete" form="deleteForm" href=\"/Optimize/Delete/' +
+                                '<a class="lnkDialog" title="Delete" rel="Category" form="deleteForm" href=\"/Optimize/Delete/' +
                                 oObj.aData[0] + '\" ><img src="/Content/Images/App/delete.png" title="Delete" class="tb-space" alt="Delete"></a>';
 
             }
@@ -519,6 +521,7 @@ $(function () {
         var linkObj = $(this);
         var linkUrlVal = linkObj.attr('href');
         var linkUrlTitle = linkObj.attr('title');
+        var linkUrlRel = linkObj.attr('rel');
         var linkUrlFormId = linkObj.attr('form');
         var updateTargetId = 'updateTargetId';
 
