@@ -20,7 +20,6 @@
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_Layout.cshtml" caret="1986" fromTop="23" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Models/f:AppModels.cs" caret="510" fromTop="11" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/f:Global.asax.cs" caret="1299" fromTop="19" />
-    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/f:Web.config" caret="955" fromTop="12" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Shared/f:_DataTablePartial.cshtml" caret="712" fromTop="6" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Category/f:Index.cshtml" caret="101" fromTop="5" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:ViewModels/f:TableViewModels.cs" caret="136" fromTop="7" />
@@ -29,6 +28,7 @@
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Scripts/d:App/f:category-jq.js" caret="1179" fromTop="16" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Optimize/f:Index.cshtml" caret="520" fromTop="0" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Scripts/d:App/f:optimize-jq.js" caret="8923" fromTop="18" />
+    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/f:Web.config" caret="1229" fromTop="8" />
   </RecentFiles>
   <RecentEdits>
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Content/d:DataTables-1.9.4/d:media/d:css/f:jquery.dataTables.css" caret="2907" fromTop="15" />
@@ -56,5 +56,6 @@
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Category/f:_Delete.cshtml" caret="327" fromTop="7" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Views/d:Category/f:Index.cshtml" caret="101" fromTop="5" />
     <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/d:Scripts/d:App/f:optimize-jq.js" caret="6910" fromTop="6" />
+    <File id="024989C6-BC89-4666-BB5B-6E77B6F34163/f:Web.config" caret="1229" fromTop="8" />
   </RecentEdits>
 </RecentFiles>
