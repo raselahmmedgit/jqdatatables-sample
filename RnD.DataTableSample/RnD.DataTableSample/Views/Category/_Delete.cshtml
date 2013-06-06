@@ -5,20 +5,22 @@
             UpdateTargetId = "deleteCategoryMess",
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "POST",
-            OnSuccess = "AjaxSuccessWithDailog('appDeleteDialog')",
+            OnSuccess = "DeleteCategorySuccess()",
         }, new { @id = "deleteCategoryForm" }))
 {  
     
     <fieldset>
         <legend>Category:</legend>
-        <div id="deleteCategoryMess" class="error invisible">
+        <div id="deleteCategoryMess" class="error">
         </div>
-        @Html.HiddenFor(model => model.CategoryId)
-        <div class="display-field">
-            <strong>Category Name: </strong>@Html.DisplayFor(model => model.Name)
-        </div>
-        <div class="display-field">
-            Do you want delete this category?
+        <div id="deleteCategoryConfirmMess">
+            @Html.HiddenFor(model => model.CategoryId)
+            <div class="display-field">
+                <strong>Category Name: </strong>@Html.DisplayFor(model => model.Name)
+            </div>
+            <div class="display-field">
+                Do you want delete this category?
+            </div>
         </div>
     </fieldset>
 }

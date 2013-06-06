@@ -166,11 +166,12 @@ namespace RnD.DataTableSample.Controllers
                 Category category = _db.Categories.Find(id);
                 if (category != null)
                 {
-                    _db.Categories.Remove(category);
-                    _db.SaveChanges();
+                    //_db.Categories.Remove(category);
+                    //_db.SaveChanges();
 
                     //return RedirectToAction("Index");
-                    return Content(Boolean.TrueString);
+                    //return Content(Boolean.TrueString);
+                    return Content("Could not able to delete.");
                 }
                 return Content("Please review your form.");
             }

@@ -54,7 +54,15 @@ function DeleteCategorySuccess() {
     }
     else {
         //show message in popup
-        $("#deleteCategoryMess").show();
+        //$("#deleteCategoryMess").show();
+
+        var updateTargetValue = $("#deleteCategoryMess").html();
+
+        //now we can close the dialog
+        $('#deleteCategoryDailog').dialog('close');
+
+        console.log(updateTargetValue);
+        
     }
 }
 //end Add, Edit, Delete - Success Funtion
